@@ -155,7 +155,7 @@ class FilestackSecurity
     protected function validateOptions($options)
     {
         foreach ($options as $key => $value) {
-            if (!in_array($key, $this->allowed_options)) {
+            if (!in_array($key, $this->allowed_options, true)) {
                 throw new FilestackException("Invalid policy option: $key:$value", 400);
             }
         }
